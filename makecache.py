@@ -29,14 +29,14 @@ def scale(img1, width, height):
 
     return img2
 
-class ImageCache:
-    def __init__(self, width=0, height=0):
+class ImageTrans:
+    def __init__(self, image_dir, trans_dir, width=0, height=0):
 
         self.screen_width = width
         self.screen_height = height
 
-        self.image_dir = 'C:\\Users\\zhaow\\Pictures\\youyou'
-        self.cache_dir = "C:\\Users\\zhaow\\Pictures\\youyou_cache"
+        self.image_dir = image_dir
+        self.trans_dir = trans_dir
 
         self.files  = self.load_files()
 
@@ -62,7 +62,7 @@ class ImageCache:
         n = 0
         try:
             for fn in self.files:
-                cachepath = self.cache_dir + fn[len(self.image_dir):]
+                cachepath = self.trans_dir + fn[len(self.image_dir):]
                 cdirname  = os.path.dirname(cachepath)
                 filename = os.path.basename(cachepath)
                 cachefile = 'zw_%04d_%s' % (self.screen_width, filename)
@@ -94,7 +94,11 @@ class ImageCache:
 def make_cache():
     pygame.init()
 
-    im = ImageCache(1920, 1080)
+
+    image_dir = 'C:\\Users\\zhaow\\Pictures\\youyou'
+    trans_dir = "C:\\Users\\zhaow\\Pictures\\youyou_cache"
+
+    im = ImageTrans(image_dir, trans_dir, 1920, 1080)
     im.make()
 
 
