@@ -5,7 +5,8 @@ install:
 * pygame
 
 usage:
- python viewpic.py -d <image directory>
+* python viewpic.py -d directory
+* then use directiion key
 
 
 
