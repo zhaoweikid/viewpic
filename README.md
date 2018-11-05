@@ -1,8 +1,11 @@
 ## viewpic
 
-## depend:  python-3.6  pygame
+install:  
+* python-3.6  
+* pygame
 
-### python viewpic.py -d <image directory>
+usage:
+ python viewpic.py -d <image directory>
 
 
 
