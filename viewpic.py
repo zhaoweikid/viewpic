@@ -352,8 +352,8 @@ class Viewer:
         size = width, height = 1920, 1080
 
         #screen = pygame.display.set_mode(size)
-        screen = pygame.display.set_mode(size, pygame.FULLSCREEN|pygame.HWSURFACE)
-        #screen = pygame.display.set_mode(size, pygame.HWSURFACE)
+        #screen = pygame.display.set_mode(size, pygame.FULLSCREEN|pygame.HWSURFACE)
+        screen = pygame.display.set_mode(size, pygame.HWSURFACE)
       
         self.screen = screen
         self.anim = None

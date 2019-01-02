@@ -94,9 +94,12 @@ class ImageTrans:
 def make_cache():
     pygame.init()
 
+    #image_dir = 'C:\\Users\\zhaow\\Pictures\\youyou'
+    #trans_dir = "C:\\Users\\zhaow\\Pictures\\youyou_cache"
 
-    image_dir = 'C:\\Users\\zhaow\\Pictures\\youyou'
-    trans_dir = "C:\\Users\\zhaow\\Pictures\\youyou_cache"
+    image_dir = '/media/zhaowei/mysd/photo'
+    trans_dir = "/home/zhaowei/photo/youyou_cache"
+
 
     im = ImageTrans(image_dir, trans_dir, 1920, 1080)
     im.make()
