@@ -352,8 +352,8 @@ class Viewer:
         size = width, height = 1920, 1080
 
         #screen = pygame.display.set_mode(size)
-        #screen = pygame.display.set_mode(size, pygame.FULLSCREEN|pygame.HWSURFACE)
-        screen = pygame.display.set_mode(size, pygame.HWSURFACE)
+        screen = pygame.display.set_mode(size, pygame.FULLSCREEN|pygame.HWSURFACE)
+        #screen = pygame.display.set_mode(size, pygame.HWSURFACE)
       
         self.screen = screen
         self.anim = None
@@ -438,16 +438,18 @@ class Viewer:
 
             pygame.display.flip()
 
+def usage():
+    print ('viewer.py -d <image directory> -p <start position>')
+    sys.exit(2)
 
 def main():
-    image_dir = 'C:\\Users\\zhaow\\Pictures\\youyou_cache'
+    image_dir = ''
     pos = 0
 
     try:
         opts, args = getopt.getopt(sys.argv[1:],"hd:p:",["dir=","pos="])
     except getopt.GetoptError:
-        print ('viewer.py -d <image directory> -p <start position>')
-        sys.exit(2)
+        usage()
 
     for opt, arg in opts:
         if opt == '-h':
@@ -459,6 +461,8 @@ def main():
             pos = int(arg)
 
     print("dir:", image_dir, 'pos:', pos)
+    if not image_dir:
+        usage()
 
     view = Viewer(image_dir, pos)
     view.run()
